@@ -34,7 +34,18 @@ def select_random_mp3(mp3_array):
     return random.choice(mp3_array)
 
 # The listed mp3files will be played in order
-mp3files = ["slow.mp3", "happy.mp3"]
+mp3files = [
+    "12TH_NIGHT_be_not_afraid.mp3",
+    "MIDSUMMER_the_course_of_love.mp3",
+    "12TH_NIGHT_if_music_be.mp3",
+    "RICHARD3_now_is_the_winter.mp3",
+    "ASYOULIKEIT_all_the_worlds_a_stage.mp3",
+    "ROMEO_wherefore_art_thou.mp3",
+    "HAMLET_to_be_or_not_to_be_hamlet.mp3",
+    "SONNET18_shall_I_compare.mp3",
+    "MACBETH_is_this_a_dagger.mp3",
+    "MERCHANT_if_you_prick_us.mp3"
+]
 
 while True:
     if lis3dh.shake(shake_threshold=12):
@@ -49,15 +60,4 @@ while True:
            pass
     # Small delay to keep things responsive but give time for interrupt processing.
     time.sleep(0.1)
-   # x, y, z = lis3dh.acceleration
-   # print((x, y, z))
-
-
-
-# You have to specify some mp3 file when creating the decoder
-#mp3 = open(mp3files[0], "rb")
-#decoder = audiomp3.MP3Decoder(mp3)
-#audio.play(decoder)
-#while audio.playing:
-#    pass
 
