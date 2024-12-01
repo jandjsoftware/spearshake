@@ -47,14 +47,16 @@ mp3files = [
     "MERCHANT_if_you_prick_us.mp3"
 ]
 
+decoder = audiomp3.MP3Decoder(mp3files[0])
+
 while True:
     if lis3dh.shake(shake_threshold=12):
         print("Shaken!")
         mp3_file_name = select_random_mp3(mp3files)
         print(mp3_file_name)
-
         mp3 = open(mp3_file_name, "rb")
-        decoder = audiomp3.MP3Decoder(mp3)
+
+        decoder.file = mp3
         audio.play(decoder)
         while audio.playing:
            pass
